@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap" rel="stylesheet">
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="top">
+            <h1 id="title">SURVEY FORM</h1>
+            <p id="description">Another freeCodeCamp.org assignment</p>
+        </div>
+        <form id="survey-form">
+            <div class="group">
+                <label for="name" id="name-label">Enter your name: </label>
+                <input type="text" id="name" placeholder="Name" class="input-field" required>
+            </div>
+            <div class="group">
+                <label for="email" id="email-label">Enter your email adress: </label>
+                <input type="email" id="email" placeholder="Email" class="input-field" required>
+            </div>
+            <div class="group">
+                <label for="number" id="number-label">Enter your favorite number from 0 to 10: </label>
+                <input type="number" id="number" min="0" max="10" placeholder="Number" class="input-field" required>
+            </div>
+            <div class="group">
+                <label for="select">What's your favorite day of the week:</label>
+                <select name="select" id="dropdown" class="input-field">
+                    <option value="mon">Monday</option>
+                    <option value="tue">Tuesday</option>
+                    <option value="wed">Wednesday</option>
+                    <option value="thu">Thursday</option>
+                    <option value="fri">Friday</option>
+                    <option value="sat">Saturday</option>
+                    <option value="sun">Sunday</option>
+                </select>
+            </div>
+            <br>
+            <div class="group">
+                <label for="radio">Do you think the utility of surveys is diminished by their overabundance?</label>
+                <fieldset id="radio">
+                    <label for="radio1"><input type="radio" id="radio1" name="opt" value="rdio opt 1">Absolutely</label>   
+                    <label for="radio2"><input type="radio" id="radio2" name="opt" value="rdio opt 2">Abundance? What abundance?</label>
+                    <label for="radio3"><input type="radio" id="radio3" name="opt" value="rdio opt 3">No way! Surveys rock!</label>
+                </fieldset>
+            </div>
+            <div class="group">
+                <p>Why are you taking this survey?</p>
+                <fieldset id="checkboxes">
+                    <label for="check1"><input type="checkbox" id="check1" name="check1" value="option1">I'm bored</label>
+                    <label for="check2"><input type="checkbox" id="check2" name="check2" value="option1">Not sure</label>
+                </fieldset>
+            </div>
+            <div class="group">
+                <p>Any comments or suggestions?</p>
+                <textarea class="input-field"></textarea>
+            </div>
+            <div class="group">
+                <button id="submit">Submit</button>
+            </div>
+        </form>
+    </body>
+</html>
