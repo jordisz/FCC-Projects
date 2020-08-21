@@ -1,0 +1,57 @@
+body{
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center;
+    color: #333;
+    margin: 0;
+  }
+  
+  .display {
+    font-family: 'Calistoga', cursive;
+  }
+  
+  #main {
+    margin: 30px 12px;
+    padding: 15px;
+    border-radius: 5px;
+    background: #dbdbdb;
+  }
+  
+  @media (max-width: 460px) {
+    #main {
+      margin: 0;
+    }
+  }
+  
+  .header {
+    color: #252525;
+  }
+  
+  h1 {
+    font-size: 4em;
+    margin-bottom: 0;
+  }
+  
+  .header p {
+    margin-top: 0;
+    font-size:2em;
+  }
+  
+  img {
+    max-width: 100%;
+    display: block;
+    height: auto;
+    margin: 0 auto;
+  }
+  
+  #img-div {
+    background: white;
+    padding: 10px;
+    margin: 0 10% 0 10%;
+    border-radius: 10px
+  }
+  
+  section {
+    margin: 0 20% 0 20%;
+  }
