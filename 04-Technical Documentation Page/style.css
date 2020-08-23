@@ -63,12 +63,11 @@ a{
     max-width: 700px;
     white-space: pre;
     padding-left: 12px;
-    ;
+    line-height: 0.7;
 }
 
 .code code {
-    display: table-cell;
-    
+    display: table-cell;  
 }
 
 .tag {
