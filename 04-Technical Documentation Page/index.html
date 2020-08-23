@@ -51,14 +51,11 @@
                 </div>
                 <p>If you want to import a D3 module that is not included in the default bundle, you must assign it a separate namespace:</p>
                 <div class="code">
-                    <code><span class="codered">import</span> * <span class="codered">as</span> d3 <span class="codered">from</span> "d3";<br>
-                        <span class="codered">import</span> * <span class="codered">as</span> d3GeoProjection <span class="codered">from</span> "d3-geo-projection";</code>
+                    <code><span class="codered">import</span> * <span class="codered">as</span> d3 <span class="codered">from</span> "d3";<br><br><span class="codered">import</span> * <span class="codered">as</span> d3GeoProjection <span class="codered">from</span> "d3-geo-projection";</code>
                 </div>
                 <p>For this reason, the preferred pattern is to import symbols from the <a href="https://github.com/d3">D3 modules</a> directly, rather than using the default bundle:</p>
                 <div class="code">
-                    <code><span class="codered">import</span> {select, selectAll} <span class="codered">from</span> "d3-selection";<br>
-                        <span class="codered">import</span> {geoPath} <span class="codered">from</span> "d3-geo";<br>
-                        <span class="codered">import</span> {geoPatterson} <span class="codered">from</span> "d3-geo-projection";</code>
+                    <code><span class="codered">import</span> {select, selectAll} <span class="codered">from</span> "d3-selection";<br><br><span class="codered">import</span> {geoPath} <span class="codered">from</span> "d3-geo";<br><br><span class="codered">import</span> {geoPatterson} <span class="codered">from</span> "d3-geo-projection";</code>
                 </div>
                 <p>If you are using a bundler, make sure your bundler is configured to consume the modules entry point in the package.json. See webpack’s <a href="https://webpack.js.org/configuration/resolve/#resolve-mainfields">resolve.mainFields</a>, for example.</p>
             </section>
