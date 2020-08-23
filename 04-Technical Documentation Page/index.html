@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+        <nav id="navbar">
+            <header><h1>D3<span style="text-transform: lowercase;">.js</span></h1></header>
+            <a class="nav-link" href="#what_is_d3.js?">What is D3.js?</a>
+            <a class="nav-link" href="#installing">Installing</a>
+            <a class="nav-link" href="#supported_environments">Supported Environments</a>
+            <a class="nav-link" href="#local_development">Local Development</a>
+            <a class="nav-link" href="#help_&_community">Help & Community</a>
+            <a class="nav-link" href="#reference">Reference</a>
+         </nav>
+
+        <main id="main-doc">
+            <section class="main-section" id="what_is_d3.js?">
+                <header>What is D3<span style="text-transform: lowercase;">.js</span>?</header>
+                <p><strong>D3</strong> (<strong>Data-Driven Documents</strong> or <strong>D3.js</strong>) is a JavaScript library for visualizing data using web standards. D3 helps you bring data to life using SVG, Canvas and HTML. D3 combines powerful visualization and interaction techniques with a data-driven approach to DOM manipulation, giving you the full capabilities of modern browsers and the freedom to design the right visual interface for your data.</p>
+            </section>
+
+            <section class="main-section" id="installing">
+                <header>Installing</header>
+                <p>For NPM, <code>npm install d3</code>. For Yarn, <code>yarn add d3</code>. Otherwise, download the <a href="https://unpkg.com/d3/build/">latest release</a>. The released bundle supports AMD, CommonJS, and vanilla environments. Create a <a href="http://bl.ocks.org/mbostock/bb09af4c39c79cffcde4">custom bundle using Rollup</a> or your preferred bundler. You can also load directly from <a href="https://d3js.org/">d3js.org</a>:</p>
+                <div class="code">
+                    <code>&lt;<span class="tag">script</span> <span class="codeblue">src</span>="https://d3js.org/d3.v5.js"&gt;&lt;/<span class="tag">script</span>&gt;</code>
+                </div>
+                <p>For the minified version:</p>
+                <div class="code">
+                    <code>&lt;<span class="tag">script</span> <span class="codeblue">src</span>="https://d3js.org/d3.v5.min.js"&gt;&lt;/<span class="tag">script</span>&gt;</code>
+                </div>
+                <p>You can also use the standalone D3 microlibraries. For example, <a href="https://github.com/d3/d3-selection">d3-selection</a>:</p>
+                <div class="code">
+                    <code>&lt;<span class="tag">script</span> <span class="codeblue">src</span>="https://d3js.org/d3-selection.v1.min.js"&gt;&lt;/<span class="tag">script</span>&gt;</code>
+                </div>
+                <p>If you prefer to pin to a specific release, try <a href="https://cdnjs.com/libraries/d3">CDNJS</a> or <a href="https://unpkg.com/d3/">unpkg</a>.</p>
+            </section> 
+  
+            <section class="main-section" id="supported_environments">
+                <header>Supported environments</header>
+                <p>D3 5+ supports recent browsers, such as Chrome, Edge, Firefox and Safari. D3 4 and below also supports IE 9+. Parts of D3 may work in older browsers, as many D3 modules have minimal requirements. For example, <a href="https://github.com/d3/d3-selection">d3-selection</a> uses the <a href="http://www.w3.org/TR/selectors-api/">Selectors API</a> Level 1, but you can preload <a href="http://sizzlejs.com/">Sizzle</a> for compatibility. You’ll need a modern browser to use <a href="http://www.w3.org/TR/SVG/">SVG</a> and <a href="http://www.w3.org/TR/css3-transitions/">CSS3 Transitions</a>. D3 is not a compatibility layer, so if your browser doesn’t support standards, you’re out of luck. Sorry!</p>
+                <p>D3 also runs on <a href="http://nodejs.org/">Node</a> and <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/workers.html">web workers</a>. To use the DOM in Node, you must provide your own DOM implementation; <a href="https://github.com/tmpvar/jsdom">JSDOM</a> is recommended. To avoid defining a global document, pass a DOM element to d3.select or a NodeList to d3.selectAll, like so:</p>
+                <div class="code">
+                    <code><span class="codered">var</span> d3 = <span class="codepurple">require</span>("d3"),<pre>    jsdom = <span class="codepurple">require</span>("jsdom");</pre><br><span class="codered">var</span> document = jsdom.<span class="codepurple">jsdom</span>(),<pre>    svg = d3.<span class="codepurple">select</span>(document.<span class="codeblue">body</span>).<span class="codepurple">append</span>("svg");</pre></code>
+                </div>
+                <p>When using D3 in an environment that supports <a href="http://exploringjs.com/es6/ch_modules.html">ES modules</a>, you can import the default D3 bundle as a namespace:</p>
+                <div class="code">
+                    <code><span class="codered">import</span> * <span class="codered">as</span> d3 <span class="codered">from</span> "d3";</code>
+                </div>
+                <p>If you want to import a D3 module that is not included in the default bundle, you must assign it a separate namespace:</p>
+                <div class="code">
+                    <code><span class="codered">import</span> * <span class="codered">as</span> d3 <span class="codered">from</span> "d3";<br>
+                        <span class="codered">import</span> * <span class="codered">as</span> d3GeoProjection <span class="codered">from</span> "d3-geo-projection";</code>
+                </div>
+                <p>For this reason, the preferred pattern is to import symbols from the <a href="https://github.com/d3">D3 modules</a> directly, rather than using the default bundle:</p>
+                <div class="code">
+                    <code><span class="codered">import</span> {select, selectAll} <span class="codered">from</span> "d3-selection";<br>
+                        <span class="codered">import</span> {geoPath} <span class="codered">from</span> "d3-geo";<br>
+                        <span class="codered">import</span> {geoPatterson} <span class="codered">from</span> "d3-geo-projection";</code>
+                </div>
+                <p>If you are using a bundler, make sure your bundler is configured to consume the modules entry point in the package.json. See webpack’s <a href="https://webpack.js.org/configuration/resolve/#resolve-mainfields">resolve.mainFields</a>, for example.</p>
+            </section>
+ 
+            <section class="main-section" id="local_development">
+                <header>Local development</header>
+                <p>Browsers enforce strict security permissions to prevent you from reading files out of the local file system. To develop locally, you must run a local web server rather than using file://…. Node’s <a href="https://www.npmjs.com/package/http-server">http-server</a> is recommended. To install:</p>
+                <div class="code">
+                    <code>npm install -g http-server</code>
+                </div>
+                <p>To run:</p>
+                <div class="code">
+                    <code>http-server & </code>
+                </div>
+                <p>This will start the server on <a href="http://localhost:8080/">http://localhost:8080</a> from the current working directory.</p>
+            </section>
+ 
+            <section class="main-section" id="help_&_community">
+                <header>Help & community</header>
+                <ul>
+                    <li><a href="http://stackoverflow.com/questions/tagged/d3.js">Stack Overflow</a></li>
+                    <li><a href="http://groups.google.com/group/d3-js">Google Group</a></li>
+                    <li><a href="https://d3js.slack.com/">Slack</a> (<a href="https://d3-slackin.herokuapp.com/">Invite</a>)</li>
+                    <li><a href="https://gitter.im/d3/d3">Gitter</a></li>
+                    <li>IRC: #d3.js on irc.freenode.net</li>
+                </ul>  
+            </section>  
+  
+            <section class="main-section" id="reference">
+                <header>Reference</header>
+                <ul>
+                    <li>All the documentation in this page is taken from <a href="https://github.com/d3/d3/wiki">https://github.com/d3/d3/wiki</a></li>
+                </ul>
+        </main>
+    </body>
+</html>
