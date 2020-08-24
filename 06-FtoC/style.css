@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#big-text {
+    padding: 60px 30px 40px 30px;
+}
+h1 {
+    text-align: center;
+}
+
+#main {
+    display: flex;
+    width: 60vw;
+    margin: auto;
+}
+
+#main div {
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;;
+}
