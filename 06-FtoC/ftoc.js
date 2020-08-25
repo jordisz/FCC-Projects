@@ -1,21 +1,69 @@
-let tempC = 110;
-const input = document.getElementById("input").value
-console.log(input);
+backgroundColor(0);
 
-if (tempC < -10){
-    document.body.style.cssText = "background-color: " + "#00a9ff";
-} else if(tempC < 5) {
-    document.body.style.cssText = "background-color: " + "#00fffa";
-} else if(tempC < 30){
-    document.body.style.cssText = "background-color: " + "#00ff37";
-} else if(tempC < 38){
-    document.body.style.cssText = "background-color: " +  "#f6ff00";
-} else if(tempC <100){
-    document.body.style.cssText = "background-color: " + "#ff6100";
-} else {
-    document.body.style.cssText = "background-color: " + "#ff0000";
+var ctoF = document.getElementById("inputC");
+var ftoC = document.getElementById("inputF"); 
+var btn = document.getElementById("button");
+
+ctoF.onclick = () =>  ftoC.value = "";
+ftoC.onclick = () => ctoF.value = "";
+
+// TODO: clear inputs when pressing backspace after conversion
+
+ctoF.addEventListener("keyup", enterKey);
+ftoC.addEventListener("keyup", enterKey);
+
+function enterKey(event) {
+    if (event.keyCode === 13) {
+        event.preventDefault();
+        btn.click();
+    }
 }
 
+btn.onclick = () => {
+    if(ftoC.value){
+        wantFToC(ftoC.value);
+    } else {
+        wantCToF(ctoF.value);
+    }
+}
+
+// Page background changes with temperature. Future todo: compute the color according to tempC
+function backgroundColor(tempC){
+    if (tempC < -10){
+        document.body.style.cssText = "background-color: " + "#66cbff";
+    } else if(tempC < 5) {
+        document.body.style.cssText = "background-color: " + "#66fff9";
+    } else if(tempC < 30){
+        document.body.style.cssText = "background-color: " + "#66ff84";
+    } else if(tempC < 38){
+        document.body.style.cssText = "background-color: " +  "#f9ff66";
+    } else if(tempC <100){
+        document.body.style.cssText = "background-color: " + "#ff9e66";
+    } else {
+        document.body.style.cssText = "background-color: " + "#ff6666";
+    }
+}
+
+function wantCToF(val){
+    let tempC = val;
+    if(!isNaN(tempC)){
+        backgroundColor(tempC);
+        ftoC.value = cToF(tempC);
+    } else {
+        console.log("tempC is not a number!")
+    }
+}
+
+function wantFToC(val){
+    let tempF = val;
+    if(!isNaN(tempF)){
+        let tempC = fToC(tempF);
+        backgroundColor(tempC);
+        ctoF.value = tempC;
+    } else {
+        console.log("tempF is not a number!")
+    }
+}
 
 function fToC(temp) {
     return (temp - 32) * 5 / 9;
@@ -25,7 +73,6 @@ function cToF(temp) {
     return (temp * 9 / 5) + 32;
 }
 
-document.body.style.cssText = "background-color: " + colors[index];
 
 // To do: append explaining text to #text-bottom. See https://www.javascripttutorial.net/javascript-dom/javascript-createelement/ if current code doesn't work
 //
