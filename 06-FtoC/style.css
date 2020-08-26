@@ -4,29 +4,59 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: "Corben", Arial, cursive;
+}
+
 #big-text {
-    padding: 60px 30px 40px 30px;
+    padding: 40px 30px 50px 30px;
 }
 h1 {
     text-align: center;
+    font-size: 3em;
 }
 
 #main {
     display: flex;
+    justify-content: center;
     width: 60vw;
     margin: auto;
 }
 
-#main div {
-    width: 50vw;
+#left {
     display: flex;
-    justify-content: center;
-    align-items: center;;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 40px;
 }
 
+#center {
+    width: 50px;
+    font-size: 3em;
+}
+
+#right {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 40px;
+}
+
+label {
+    font-size: 3em;
+    padding-bottom: 0px;
+}
+
+
 input[type="text"] {
+    font-family: "Corben", Arial, cursive;
+    font-size: 2em;
+    text-align: center;
     height: 80px;
-    width: 80px;
+    width: 100px;
+    border: 0;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.5)
 }
 
 #button-div {
@@ -43,4 +73,5 @@ input[type="text"] {
     border: 1px solid rgb(131, 78, 131);
     border-radius: 5px;
     background-color: rgb(51, 212, 212);
+    font-size: 1.1em;
 }
