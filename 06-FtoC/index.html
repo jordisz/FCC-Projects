@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Corben&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Fahrenheit to Celsius converter</title>
 </head>
@@ -12,10 +13,13 @@
     </div>
     <div id="main">
         <div id="left">
-            <input type="text" id="inputF"onfocus="this.value = ''" placeholder="ºF">
+            <input type="text" id="inputF"onfocus="this.value = ''">
+            <label for="inputF">º F</label>
         </div>
+        <div id="center">=</div>
         <div id="right">
-            <input type="text" id="inputC" onfocus="this.value = ''" placeholder="ºC">
+            <input type="text" id="inputC" onfocus="this.value = ''">
+            <label for="inputF">º C</label>
         </div>
     </div>
     <div id="button-div"><button id="button">Convert!</button></div>
