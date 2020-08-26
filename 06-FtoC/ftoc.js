@@ -7,17 +7,8 @@ var btn = document.getElementById("button");
 ctoF.onclick = () =>  ftoC.value = "";
 ftoC.onclick = () => ctoF.value = "";
 
-// TODO: clear inputs when pressing backspace after conversion
-
 ctoF.addEventListener("keyup", enterKey);
 ftoC.addEventListener("keyup", enterKey);
-
-function enterKey(event) {
-    if (event.keyCode === 13) {
-        event.preventDefault();
-        btn.click();
-    }
-}
 
 btn.onclick = () => {
     if(ftoC.value){
@@ -27,20 +18,21 @@ btn.onclick = () => {
     }
 }
 
-// Page background changes with temperature. Future todo: compute the color according to tempC
-function backgroundColor(tempC){
-    if (tempC < -10){
-        document.body.style.cssText = "background-color: " + "#66cbff";
-    } else if(tempC < 5) {
-        document.body.style.cssText = "background-color: " + "#66fff9";
-    } else if(tempC < 30){
-        document.body.style.cssText = "background-color: " + "#66ff84";
-    } else if(tempC < 38){
-        document.body.style.cssText = "background-color: " +  "#f9ff66";
-    } else if(tempC <100){
-        document.body.style.cssText = "background-color: " + "#ff9e66";
-    } else {
-        document.body.style.cssText = "background-color: " + "#ff6666";
+ctoF.addEventListener("keyup", backspKey);
+ftoC.addEventListener("keyup", backspKey);
+
+function enterKey(event) {
+    if (event.keyCode === 13) {
+        event.preventDefault();
+        btn.click();
+    }
+}
+
+function backspKey(event) {
+    if(event.keyCode === 8 || event.keyCode === 46){
+        event.preventDefault();
+        ftoC.value = "";
+        ctoF.value = "";
     }
 }
 
@@ -72,6 +64,25 @@ function fToC(temp) {
 function cToF(temp) {
     return (temp * 9 / 5) + 32;
 }
+
+
+// Page background changes with temperature. Future todo: compute the color according to tempC
+function backgroundColor(tempC){
+    if (tempC < -10){
+        document.body.style.cssText = "background-color: " + "#66cbff";
+    } else if(tempC < 5) {
+        document.body.style.cssText = "background-color: " + "#66fff9";
+    } else if(tempC < 30){
+        document.body.style.cssText = "background-color: " + "#66ff84";
+    } else if(tempC < 38){
+        document.body.style.cssText = "background-color: " +  "#f9ff66";
+    } else if(tempC <100){
+        document.body.style.cssText = "background-color: " + "#ff9e66";
+    } else {
+        document.body.style.cssText = "background-color: " + "#ff6666";
+    }
+}
+
 
 
 // To do: append explaining text to #text-bottom. See https://www.javascripttutorial.net/javascript-dom/javascript-createelement/ if current code doesn't work
