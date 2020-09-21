@@ -15,6 +15,8 @@ marked.setOptions({
     };
     
     render() {
+      let result = marked(this.state.input);
+      let clean = DOMPurify.sanitize(result);
       return (
         <div id="container">
           <div>
@@ -23,7 +25,7 @@ marked.setOptions({
           </div>
           <div>
             <h2 class="label">Markdown Preview</h2>
-            <div id="preview" dangerouslySetInnerHTML={{ __html: marked(this.state.input)}}></div>
+            <div id="preview" dangerouslySetInnerHTML={{ __html: clean}}></div>
           </div>
         </div>
       );
