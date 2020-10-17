@@ -1,0 +1,55 @@
+body {
+    background-color: #7F8688;
+    color: #FFDF6C;
+  }
+  
+  #big {
+    width: 50%;
+    margin: 25vh auto 7vh auto;
+    text-align: center;
+  }
+  
+  #time-left {
+    font-size: 2em;
+    margin-bottom: 0;
+  }
+  
+  button {
+    background-color: #929D9E;
+    border: 0px;
+    border-radius: 8px;
+  }
+  
+  .bgbtn {
+    width: 80px;
+    height: 30px;
+  }
+  
+  #controls {
+    width: 400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 180px 180px;
+    gap: 40px;
+  }
+  
+  .subs {
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .num {
+    font-size: 1.3em;
+    padding: 0 5px 0 5px;
+  }
+  
+  .label {
+    font-size: 0.9em;
+  }
+  
+  
+  
+/*   #929D9E lightgrey
+     #F3E367 lightyellow
+     #202020 almostblack
+     #FFDF6C otheryellow */
