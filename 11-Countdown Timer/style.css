@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+
 body {
     background-color: #7F8688;
     color: #FFDF6C;
+    font-family: 'Noto Sans JP', sans-serif;
   }
   
   #big {
@@ -21,8 +24,8 @@ body {
   }
   
   .bgbtn {
-    width: 80px;
-    height: 30px;
+    width: 60px;
+    height: 40px;
   }
   
   #controls {
@@ -36,6 +39,11 @@ body {
   .subs {
     margin: 0 auto;
     text-align: center;
+  }
+
+  span {
+    display: inline-block;
+    width: 30px;
   }
   
   .num {
