@@ -51,6 +51,8 @@ $(document).ready(function() {
   $("#reset").click(function() {
     running = false;
     clearInterval(go);
+    $("#start_stop").html("<i data-feather='play'></i>");
+    feather.replace();
     $("#beep")[0].pause();
     $("#beep")[0].currentTime = 0;
     remain = 0;
@@ -67,8 +69,12 @@ $(document).ready(function() {
   $("#start_stop").click(function() {
      if(running == true) {
       running = false;
+      $("#start_stop").html("<i data-feather='play'></i>");
+      feather.replace();
       clearInterval(go);
     } else {
+      $("#start_stop").html("<i data-feather='pause'></i>");
+      feather.replace();
       if(remain > 0) {
         timer(remain)
       } else {
