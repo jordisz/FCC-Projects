@@ -4,12 +4,17 @@ body {
     background-color: #7F8688;
     color: #FFDF6C;
     font-family: 'Noto Sans JP', sans-serif;
+    font-size: 20px;
   }
   
   #big {
     width: 50%;
     margin: 25vh auto 7vh auto;
     text-align: center;
+  }
+
+  p {
+    margin-top: 5px;
   }
   
   #time-left {
@@ -24,8 +29,8 @@ body {
   }
   
   .bgbtn {
-    width: 60px;
-    height: 40px;
+    width: 75px;
+    height: 50px;
   }
   
   #controls {
@@ -43,16 +48,23 @@ body {
 
   span {
     display: inline-block;
-    width: 30px;
+    width: 45px;
   }
   
   .num {
     font-size: 1.3em;
     padding: 0 5px 0 5px;
   }
+
+  .btn-sm {
+    width: 30px;
+    height: 25px;
+    padding-top: 4px;
+  }
   
   .label {
     font-size: 0.9em;
+    color:  #ffdf6cb0;
   }
   
   
