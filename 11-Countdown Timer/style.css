@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
 
 body {
-    background-color: #7F8688;
+    background: linear-gradient(90deg, rgb(100, 100, 100) 0%, rgb(86,86,86) 30%, rgb(86,86,86) 70%, rgb(100,100,100) 100%);
     color: #FFDF6C;
     font-family: 'Noto Sans JP', sans-serif;
     font-size: 20px;
