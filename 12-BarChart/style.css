@@ -1,0 +1,31 @@
+body {
+    background-image: linear-gradient(to right, #008834f6, #009944f6),
+    url(8lnbXtxFGZw.jpg);
+}
+.container {
+    width: 1000px;
+    margin: 150px auto;
+    border-radius: 10px;
+    /*background: rgba(166, 255, 83, 0.3);*/
+}
+
+#tooltip {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 150px;
+    height: 50px;
+    padding: 2px;
+    background: lightsteelblue;
+    box-shadow: 1px 1px 10px;
+    border-radius: 2px;
+    pointer-events: none; }
+  
+
+.cursor {
+    position: absolute;
+    background: #fff;
+    pointer-events: none;
+  }
