@@ -17,3 +17,4 @@ Projects I completed as part of the freeCodeCamp.org curriculum (https://www.fre
 * URL Shortener Microservice (Express/MongoDB): Backup files from an URL shortener backend project.
 * File Metadata Microservice (Express): Backup server.js from the last project in the API and Microservices curriculum.
 * Exercise Tracker (Express/MongoDB): Backup files from an exercise tracker project.
+* Header Parser (Express): Backup server.js from Header Parser Microservice project.
